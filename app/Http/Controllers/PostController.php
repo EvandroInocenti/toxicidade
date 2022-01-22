@@ -22,10 +22,17 @@ class PostController extends Controller
 
     public function store(StoreUpdatePost $request){
 
-       //dd($request->all());
-        
         Post::create($request->all());
-        
+
         return redirect()->route('posts.index');
+    }
+
+    public function show($id){
+
+        if( !$post = Post::find($id)) {
+            return redirect()->route('posts.index');
+        }
+
+        return view('admin.posts.show', compact('post'));
     }
 }
