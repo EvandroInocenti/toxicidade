@@ -21,6 +21,15 @@ class PostController extends Controller
 
     public function store(StoreUpdatePost $request){
 
+      /*  $data = $request->all();
+
+        if( $request->image->isValid()) {
+
+            $image = $request->image->store('posts');
+            $data['image'] = $image;
+        }
+        */
+
         Post::create($request->all());
 
         return redirect()
