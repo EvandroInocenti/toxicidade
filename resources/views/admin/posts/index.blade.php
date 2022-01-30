@@ -36,3 +36,4 @@
 {{ $posts->links() }}
 @endif
 @endsection
+
