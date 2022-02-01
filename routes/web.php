@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{
+    PacienteController,
     PostController
 };
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+    Route::any('/pacientes/search', [PacienteController::class, 'search'])->name('pacientes.search');
+    Route::get('/pacientes/create', [PacienteController::class, 'create'])->name('pacientes.create');
+    Route::put('/pacientes/{id}', [PacienteController::class, 'update'])->name('pacientes.update');
+    Route::get('/pacientes/edit/{id}', [PacienteController::class, 'edit'])->name('pacientes.edit');
+    Route::delete('/pacientes/{id}', [PacienteController::class, 'destroy'])->name('pacientes.destroy');
+    Route::get('/pacientes/{id}', [PacienteController::class, 'show'])->name('pacientes.show');
+    Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
+    Route::get('/pacientes', [PacienteController::class, 'index'])->name('pacientes.index');
+
 });
 
 Route::get('/dashboard', function () {
