@@ -17,4 +17,4 @@
 <input type="text" name="peso" id="peso" placeholder="Peso" value={{ $paciente->peso ?? old('peso') }}>
 <input type="text" name="superficie_corporea" id="superficie_corporea" placeholder="Superfície corporea" value={{ $paciente->superficie_corporea ?? old('superficie_corporea') }}>
 <input type="text" name="acesso" id="acesso" placeholder="Acesso" value={{ $paciente->acesso ?? old('acesso') }}>
-<button type="submit">Salvar</button>
+<button class="bg-sky-600 hover:bg-sky-700 rounded-lg h-8 w-32 text-white"  type="submit">Salvar</button>

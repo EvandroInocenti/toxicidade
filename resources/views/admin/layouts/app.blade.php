@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - {{ config('app.name') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
 
 </head>
-<body>
-
-    <div class="content">
+<body class="bg-blue-50">
+    <div class="conteiner mx-auto py-8">
         @yield('content')
     </div>
 
