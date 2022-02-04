@@ -7,7 +7,7 @@
 @endif
 
 @csrf
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-4 w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
     <form>
         <label class="block">
             <span class="block text-sm font-medium text-slate-700">Nome</span>
