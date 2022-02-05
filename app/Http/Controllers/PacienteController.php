@@ -22,7 +22,7 @@ class PacienteController extends Controller
     public function store(StoreUpdatePaciente $request){
 
         Paciente::create($request->all());
-        
+
         return redirect()->route('pacientes.index');
     }
 
@@ -75,7 +75,7 @@ class PacienteController extends Controller
                         ->orWhere('email', 'LIKE', "%{$request->search}%")
                         ->orWhere('cpf', 'LIKE', "%{$request->search}%")
                         ->orWhere('acesso', '=', "%{$request->search}%")
-                        ->paginate();
+                        ->paginate(20);
         return view('admin.pacientes.index', compact('pacientes'));
     }
 }
