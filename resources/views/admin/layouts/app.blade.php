@@ -13,6 +13,8 @@
     <div class="conteiner mx-auto py-8">
         @yield('content')
     </div>
+    <script src="https://unpkg.com/flowbite@1.3.2/dist/flowbite.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
 </body>
 </html>

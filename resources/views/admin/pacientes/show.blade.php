@@ -4,7 +4,6 @@
 
 @section('content')
 <h1>Informações do paciente</h1>
-
 <ul>
     <li><strong>Nome: </strong> {{$paciente->nome}}</li>
     <li><strong>CPF: </strong>  {{$paciente->cpf}}</li>
@@ -21,5 +20,4 @@
         </div>
       </div>
 </form>
-
 @endsection

@@ -59,7 +59,6 @@
                 Altura
             </p>
         </label>
-
         <label class="block">
             <span class="block text-sm font-medium text-slate-700">Peso</span>
             <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="peso" id="peso" placeholder="Peso" value={{ $paciente->peso ?? old('peso') }}>
@@ -67,7 +66,6 @@
                 Peso
             </p>
         </label>
-
         <label class="block">
             <span class="block text-sm font-medium text-slate-700">Superfície corpórea</span>
             <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="superficie_corporea" id="superficie_corporea" placeholder="Superfície corporea" value={{ $paciente->superficie_corporea ?? old('superficie_corporea') }}>
@@ -75,14 +73,22 @@
                 Superfície corpórea
             </p>
          </label>
-
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Acesso</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="acesso" id="acesso" placeholder="Acesso" value={{ $paciente->acesso ?? old('acesso') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Acesso
-            </p>
-        </label>
+        <fieldset>
+            <legend class="block text-sm font-medium text-slate-700">Acesso</legend>
+            <div class="flex items-center mb-4">
+            <input id="acesso-bloqueado" type="radio" name="acesso" value="USA" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked="">
+            <label for="acesso-bloqueado" class="block ml-2 text-sm font-medium text-slate-700">
+            Boqueado
+            </label>
+            </div>
+            <div class="flex items-center mb-4">
+            <input id="acesso-liberado" type="radio" name="acesso" value="Germany" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+            <label for="acesso-liberado" class="block ml-2 text-sm font-medium text-slate-700">
+            Liberado
+            </label>
+            </div>
+        </fieldset>
         <button class="bg-sky-600 hover:bg-sky-700 rounded-lg h-8 w-32 text-white" type="submit">Salvar</button>
-    </form>
+    </form>    
 </div>
+

@@ -12,6 +12,9 @@ class PacienteController extends Controller
     {
         $pacientes = Paciente::paginate();
 
+        // Buscar pacientes do medico
+       // $pacientes = Paciente::where("medico_id", auth()->user()->id)->paginate();
+
         return view('admin.pacientes.index', compact('pacientes'));
     }
 
