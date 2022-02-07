@@ -7,88 +7,57 @@
 @endif
 
 @csrf
-<div class="grid grid-cols-2 gap-4 w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-    <form>
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Nome</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Seu nome" type="text" name="nome" id="nome" value={{ $paciente->nome ?? old('nome') }}>
-            <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                Informe seu nome.
-            </p>
-        </label>
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">CPF</span>
-            <input class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="cpf" id="cpf" placeholder="CPF" value={{ $paciente->cpf ?? old('cpf') }}>
-        </label>
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Email</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="seu@email.com.br" type="email" name="email" id="email" value={{ $paciente->email ?? old('email') }}>
-            <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                Email inválido.
-            </p>
-        </label>
+<form>
+    <div class="grid xl:grid-cols-2 xl:gap-6">
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nome</label>
+            <input placeholder="Seu nome" type="text" name="nome" id="nome" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->nome ?? old('nome') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="cpf" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">CPF</label>
+            <input  type="text" name="cpf" id="cpf" placeholder="CPF" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->cpf ?? old('cpf') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+            <input placeholder="seu@email.com.br" type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->email ?? old('email') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="senha" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Senha" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->senha ?? old('senha') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="telefone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telefone</label>
+            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->telefone ?? old('telefone') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="nascimento" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Data de Nascimento</label>
+            <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->nascimento ?? old('nascimento') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="altura" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Altura</label>
+            <input type="text" name="altura" id="altura" placeholder="Altura" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->altura ?? old('altura') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="peso" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Peso</label>
+            <input type="text" name="peso" id="peso" placeholder="Peso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->peso ?? old('peso') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="superficie_corporea" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Superfície Corporea</label>
+            <input type="text" name="superficie_corporea" id="superficie_corporea" placeholder="Superfície Corporea" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->superficie_corporea ?? old('superficie_corporea') }}>
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <label for="acesso" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Acesso</label>
+            <input type="text" name="acesso" id="acesso" placeholder="Acesso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ $paciente->acesso ?? old('superficie_corporea') }}>
 
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Senha</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="password" name="senha" id="senha" placeholder="Senha" value={{ $paciente->senha ?? old('senha') }}>
-            <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                Senha.
-            </p>
-        </label>
-
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Telefone</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="telefone" id="telefone" placeholder="Telefone" value={{ $paciente->telefone ?? old('telefone') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Telefone
-            </p>
-        </label>
-
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Data de nascimento</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" value={{ $paciente->nascimento ?? old('nascimento') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Data de nascimento
-            </p>
-        </label>
-
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Altura</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="altura" id="altura" placeholder="Altura" value={{ $paciente->altura ?? old('altura') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Altura
-            </p>
-        </label>
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Peso</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="peso" id="peso" placeholder="Peso" value={{ $paciente->peso ?? old('peso') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Peso
-            </p>
-        </label>
-        <label class="block">
-            <span class="block text-sm font-medium text-slate-700">Superfície corpórea</span>
-            <input class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" type="text" name="superficie_corporea" id="superficie_corporea" placeholder="Superfície corporea" value={{ $paciente->superficie_corporea ?? old('superficie_corporea') }}>
-            <p class="mt-2 invisible peer-invalid:invisible text-pink-600 text-sm">
-                Superfície corpórea
-            </p>
-         </label>
-        <fieldset>
-            <legend class="block text-sm font-medium text-slate-700">Acesso</legend>
-            <div class="flex items-center mb-4">
-            <input id="acesso-bloqueado" type="radio" name="acesso" value="USA" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked="">
-            <label for="acesso-bloqueado" class="block ml-2 text-sm font-medium text-slate-700">
-            Boqueado
-            </label>
-            </div>
-            <div class="flex items-center mb-4">
-            <input id="acesso-liberado" type="radio" name="acesso" value="Germany" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-            <label for="acesso-liberado" class="block ml-2 text-sm font-medium text-slate-700">
-            Liberado
-            </label>
-            </div>
-        </fieldset>
-        <button class="bg-sky-600 hover:bg-sky-700 rounded-lg h-8 w-32 text-white" type="submit">Salvar</button>
-    </form>    
-</div>
-
+           <!-- <label for="acesso" class="block flex relative items-center cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-300">
+                <input id="acesso" class="sr-only" type="checkbox">
+                <div class="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Acesso</span>
+                </div>
+            </label> -->
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Salvar</button>
+        </div>
+    </div>
+</form>

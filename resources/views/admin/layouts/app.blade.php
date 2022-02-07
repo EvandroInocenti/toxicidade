@@ -7,10 +7,11 @@
     <title>@yield('title') - {{ config('app.name') }}</title>
 
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.3/dist/flowbite.min.css" />
 
 </head>
 <body class="bg-blue-50">
-    <div class="conteiner mx-auto py-8">
+    <div class="mb-6">
         @yield('content')
     </div>
     <script src="https://unpkg.com/flowbite@1.3.2/dist/flowbite.js"></script>
