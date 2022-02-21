@@ -10,13 +10,23 @@ class PacienteController extends Controller
 {
     public function index()
     {
-        $pacientes = Paciente::paginate();
+        //$pacientes = Paciente::paginate();
+        $pacientes = $this->getPacientes();
 
         // Buscar pacientes do medico
        // $pacientes = Paciente::where("medico_id", auth()->user()->id)->paginate();
 
-        return view('admin.pacientes.index', compact('pacientes'));
+        return view('admin.pacientes.index', ['pacientes' => $pacientes]);
     }
+
+    public function pacientesList(){
+        return response()->json(['pacientes' => $this->getPacientes()]);
+    }
+
+    private function getPacientes(){
+        return Paciente::all();
+    }
+
 
     public function create(){
         return view('admin.pacientes.create');

@@ -5,7 +5,7 @@
 @section('content')
 <header class="space-y-4 p-5 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
     <div class="flex items-center justify-between">
-        <a href="{{ route('pacientes.create') }}" class="hover:bg-blue-800 group flex focus:ring-4 focus:ring-blue-300 font-medium bg-blue-700 text-white rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <a href="{{ route('pacientes.create') }}" class="hover:bg-blue-700 group flex focus:ring-4 focus:ring-blue-300 font-medium bg-blue-800 text-white rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <svg width="20" height="20" fill="currentColor" class="mr-2" aria-hidden="true">
                 <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
             </svg>
@@ -31,7 +31,7 @@
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Procurar pacientes" name="search"/>
                 </div>
                 <div class="relative z-0 mb-6 w-full group">
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pesquisar</button>
+                    <button type="submit" class="text-white bg-blue-800 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pesquisar</button>
                 </div>
             </div>
         </div>
@@ -93,9 +93,4 @@
     </div>
 </div>
 
-@if (isset($filters))
-{{ $pacientes->appends()->links() }}
-@else
-{{ $pacientes->links() }}
-@endif
 @endsection

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.3/dist/flowbite.min.css" />
 
 </head>
-<body class="bg-blue-50">
+<body class="bg-white">
     <div class="mb-6">
         @yield('content')
     </div>
