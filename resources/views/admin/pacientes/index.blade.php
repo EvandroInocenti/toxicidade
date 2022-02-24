@@ -5,7 +5,7 @@
 @section('content')
 <header class="space-y-4 p-5 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
     <div class="flex items-center justify-between">
-        <a href="{{ route('pacientes.create') }}" class="hover:bg-blue-700 group flex focus:ring-4 focus:ring-blue-300 font-medium bg-blue-800 text-white rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <a href="{{ route('pacientes.create') }}" class="hover:bg-blue-700 group flex focus:ring-4 focus:ring-blue-300 bg-blue-800 text-white font-medium py-1 px-2 border text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <svg width="20" height="20" fill="currentColor" class="mr-2" aria-hidden="true">
                 <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
             </svg>
@@ -31,7 +31,7 @@
                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Procurar pacientes" name="search"/>
                 </div>
                 <div class="relative z-0 mb-6 w-full group">
-                    <button type="submit" class="text-white bg-blue-800 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pesquisar</button>
+                    <button type="submit" class="bg-blue-800 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 rounded-lg text-white font-medium py-1 px-2 border text-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pesquisar</button>
                 </div>
             </div>
         </div>
@@ -66,6 +66,8 @@
                                 </th>
                                 <th scope="col" class="p-4">
                                     <span class="sr-only">Editar</span>
+                                </th> <th scope="col" class="p-4">
+                                    <span class="sr-only">Deletar</span>
                                 </th>
                             </tr>
                         </thead>
@@ -77,12 +79,23 @@
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $paciente->CPF }}</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $paciente->email }}</td>
                                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $paciente->telefone }}</td>
-                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="{{ route('pacientes.show', $paciente->id) }}" class="text-blue-600 dark:text-blue-500 hover:underline">Ver</a>
-                                </td>
-                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="{{ route('pacientes.edit', $paciente->id) }}" class="text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                                </td>
+                                <th class="p-2 md:border md:border-grey-500 text-left md:table-cell" scope="col">
+                                    <form action="{{ route('pacientes.show', $paciente->id) }}">
+                                        <button class="bg-blue-800 hover:bg-blue-700 text-white font-medium py-1 px-2 border text-center border-blue-500 rounded">Ver</button>
+                                    </form>
+                                </th>
+                                <th class="p-2 md:border md:border-grey-500 text-left md:table-cell" scope="col">
+                                    <form action="{{ route('pacientes.edit', $paciente->id) }}">
+                                        <button class="bg-blue-800 hover:bg-blue-700 text-white font-medium py-1 px-2 text-center border border-blue-500 rounded">Editar</button>
+                                    </form>
+                                </th>
+                                <th class="p-2 md:border md:border-grey-500 text-left md:table-cell" scope="col">
+                                    <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="bg-red-800 hover:bg-red-700 text-white font-medium py-1 px-2 text-center border border-red-500 rounded" type="submit">Delete</button>
+                                    </form>
+                                </th>
                             </tr>
                             @endforeach
                         </tbody>
@@ -92,5 +105,4 @@
         </div>
     </div>
 </div>
-
 @endsection
